@@ -22,7 +22,18 @@ export default class TestPage extends React.Component {
         this.setState({wWidth: handler.window.width});})   
     };
 
-    
+    textAlign(width, height) {
+        var imgDimension = {
+            scaledWidth: width,
+            scaledHeight: height,
+        }
+
+        //If screen is small, dont justify text
+        if (this.state.wWidth > 1200){
+            return 'justify';
+        }
+        return 'left';
+    }
 
     scaleImage(width, height) {
         var imgDimension = {
@@ -75,8 +86,8 @@ export default class TestPage extends React.Component {
                                 if(data.type == "block"){
                                     return (
                                         <React.Fragment key={index}>
-                                            <Text style={styles.sectionText}>{data.title}</Text>
-                                            <Text style={styles.smallText}>{data.text}</Text>
+                                            <Text style={[styles.sectionText, {textAlign: this.textAlign(data.width, data.height)}]}>{data.title}</Text>
+                                            <Text style={[styles.smallText, {textAlign: this.textAlign(data.width, data.height)}]}>{data.text}</Text>
                                         </React.Fragment>
                                     )
                                 }
@@ -156,8 +167,8 @@ export default class TestPage extends React.Component {
                                         return(
                                             <React.Fragment key={index}>
                                             <View style={styles.imageTextParentColumn}>
-                                                <Text style={styles.sectionText}>{data.title}</Text>
-                                                <Text style={styles.smallText}>{data.text}</Text>
+                                                <Text style={[styles.sectionText, {textAlign: this.textAlign(data.width, data.height)}]}>{data.title}</Text>
+                                                <Text style={[styles.smallText, {textAlign: this.textAlign(data.width, data.height)}]}>{data.text}</Text>
                                                 <View style={[styles.captionBox, {width: this.scaleImage(data.width, data.height).scaledWidth}, {height: this.scaleImage(data.width, data.height).scaledHeight}]}>
                                                         <Image source={data.image} style={styles.imageLogo}></Image>
                                                         <Text style={styles.captionText}>{data.caption}</Text>
@@ -172,8 +183,8 @@ export default class TestPage extends React.Component {
                                             <React.Fragment key={index}>
                                                 <View style={styles.imageTextParent}>
                                                     <View style={[{flex: 1}, {minWidth: 200}]}>
-                                                        <Text style={styles.sectionText}>{data.title}</Text>
-                                                        <Text style={styles.smallText}>{data.text}</Text>
+                                                        <Text style={[styles.sectionText, {textAlign: this.textAlign(data.width, data.height)}]}>{data.title}</Text>
+                                                        <Text style={[styles.smallText, {textAlign: this.textAlign(data.width, data.height)}]}>{data.text}</Text>
                                                     </View>
                                                     <View style={[{flex: .1}, {marginLeft: this.scaleImage(data.width, data.height).scaledWidth/2}, {marginRight: this.scaleImage(data.width, data.height).scaledWidth/2}]}>
                                                         <Text style={styles.invisText}>{'\n\n'}</Text>
@@ -199,8 +210,8 @@ export default class TestPage extends React.Component {
                                                 <View style={[styles.captionBox, {width: this.scaleImage(data.width, data.height).scaledWidth}, {height: this.scaleImage(data.width, data.height).scaledHeight}]}>
                                                         <Image source={data.image} style={styles.imageLogo}></Image>
                                                 </View>
-                                                <Text style={[styles.sectionText, {fontSize: data.titleSize}]}>{data.title}</Text>
-                                                <Text style={[styles.smallText, {fontSize: data.textSize}]}>{data.text}</Text>
+                                                <Text style={[styles.sectionText, {fontSize: data.titleSize}, {textAlign: this.textAlign(data.width, data.height)}]}>{data.title}</Text>
+                                                <Text style={[styles.smallText, {fontSize: data.textSize}, {textAlign: this.textAlign(data.width, data.height)}]}>{data.text}</Text>
                                                 
                                                 
                                             </View>
@@ -212,8 +223,8 @@ export default class TestPage extends React.Component {
                                             <React.Fragment key={index}>
                                                 <View style={styles.imageTextParent}>
                                                     <View style={[{flex: 1}, {minWidth: 200}]}>
-                                                        <Text style={[styles.sectionText, {fontSize: data.titleSize}]}>{data.title}</Text>
-                                                        <Text style={[styles.smallText, {fontSize: data.textSize}]}>{data.text}</Text>
+                                                        <Text style={[styles.sectionText, {fontSize: data.titleSize}, {textAlign: this.textAlign(data.width, data.height)}]}>{data.title}</Text>
+                                                        <Text style={[styles.smallText, {fontSize: data.textSize}, {textAlign: this.textAlign(data.width, data.height)}]}>{data.text}</Text>
                                                     </View>
                                                     <View style={[{flex: .1}, {marginLeft: this.scaleImage(data.width, data.height).scaledWidth/2}, {marginRight: this.scaleImage(data.width, data.height).scaledWidth/2}]}>
                                                         <Text style={styles.invisText}>{'\n\n'}</Text>
