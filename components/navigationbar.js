@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
         elevation: 8,
         backgroundColor: 'transparent',
         borderRadius: 0,
-        paddingVertical: 10,
+        paddingVertical: 50,
         paddingHorizontal: 12,
         opacity: 1.0
       },
