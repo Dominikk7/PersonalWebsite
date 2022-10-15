@@ -102,8 +102,8 @@ const styles = StyleSheet.create({
     },
     //Top page space
     pageContainerTop: {
-        flex: .05,
-        flexDirection: 'row',
+        flex: .01,
+        //flexDirection: 'row',
     },
     imageLogo: {
         width: 10,

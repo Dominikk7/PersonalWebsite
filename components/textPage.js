@@ -189,6 +189,45 @@ export default class TestPage extends React.Component {
                                     }
                                     
                                 }
+                                //Text with image, no caption
+                                else if(data.type == "imageBlockCaptionless"){
+                                    //Move picture down
+                                    if(data.width*2 > this.state.wWidth){
+                                        return(
+                                            <React.Fragment key={index}>
+                                            <View style={styles.imageTextParentColumn}>
+                                                <View style={[styles.captionBox, {width: this.scaleImage(data.width, data.height).scaledWidth}, {height: this.scaleImage(data.width, data.height).scaledHeight}]}>
+                                                        <Image source={data.image} style={styles.imageLogo}></Image>
+                                                </View>
+                                                <Text style={[styles.sectionText, {fontSize: data.titleSize}]}>{data.title}</Text>
+                                                <Text style={[styles.smallText, {fontSize: data.textSize}]}>{data.text}</Text>
+                                                
+                                                
+                                            </View>
+                                        </React.Fragment> 
+                                        )
+                                    }
+                                    else{
+                                        return(
+                                            <React.Fragment key={index}>
+                                                <View style={styles.imageTextParent}>
+                                                    <View style={[{flex: 1}, {minWidth: 200}]}>
+                                                        <Text style={[styles.sectionText, {fontSize: data.titleSize}]}>{data.title}</Text>
+                                                        <Text style={[styles.smallText, {fontSize: data.textSize}]}>{data.text}</Text>
+                                                    </View>
+                                                    <View style={[{flex: .1}, {marginLeft: this.scaleImage(data.width, data.height).scaledWidth/2}, {marginRight: this.scaleImage(data.width, data.height).scaledWidth/2}]}>
+                                                        <Text style={styles.invisText}>{'\n\n'}</Text>
+                                                        <View style={[styles.captionBox, {width: this.scaleImage(data.width, data.height).scaledWidth}, {height: this.scaleImage(data.width, data.height).scaledHeight}]}>
+                                                            <Image source={data.image} style={styles.imageLogo}></Image>
+                                                        </View>
+                                                    </View>
+                                                    
+                                                </View>
+                                            </React.Fragment> 
+                                        )     
+                                    }
+                                    
+                                }
                                 //Link
                                 else if(data.type == "link"){
                                     return(

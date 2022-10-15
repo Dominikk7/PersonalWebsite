@@ -6,6 +6,8 @@ import NavigationBar from "../components/navigationbar.js";
 import NavStyle from "../styles/navStyle";
 import { LinearGradient } from 'expo-linear-gradient';
 import { Dimensions } from 'react-native';
+import TextPage from "../components/textPage.js";
+import { MainData } from './mainData.js';
 
 export default class MainPage extends React.Component {
 
@@ -37,7 +39,7 @@ export default class MainPage extends React.Component {
     scaleSize (size) {
         return (this.state.wWidth)/2543 * size;
     }
-
+    //fontSize: this.scaleSize(50)
 
     
     render() {
@@ -47,46 +49,10 @@ export default class MainPage extends React.Component {
             <View style={NavStyle.navBarParent}>
                 <NavigationBar navigateTo={this.navigateTo} currentPage='MainPage'/>
             </View>
+            
+            
+            <TextPage pageData={MainData}></TextPage>
 
-            <LinearGradient
-                colors={['#2b6ef2', '#103276']}
-                style={styles.background}
-                end = {[1, 1]}>               
-                
-                <View style={styles.pageContainerTop}>
-                
-                </View>
-
-                <View style={styles.pageContainer}>
-                    <View style={styles.viewLeftContainer}>                      
-                            <Text style={[styles.boldText, {fontSize: this.scaleSize(50)}]}>Hello, I am Dominik.</Text> 
-                            <Text style={[styles.smallText, {fontSize: this.scaleSize(30)}]}>{'\n'}I am currently studying Computer Engineering at the University of Florida. 
-                            I am always coming up with ideas and working on projects to learn about different technologies, and applying 
-                            them to solve problems. My passions are robotics, computers, programming, and crypto, and my
-                            favorite outdoor activity is mountain biking. At UF I am a part of the Polish Student Association, ACM, GAITOR Club
-                            and the Machine Intelligence Lab.{'\n\n'}My goal is to work on projects that I enjoy in a team environment. I value
-                            other’s skills as much as my own, and I know with the right team, there are no limits to what can be 
-                            accomplished . I hope to work on projects that require developing new solutions to a problem or automating
-                            and improving an existing one. I also want to continue to work on my own projects because I like the challenge
-                            of creating something by myself and bringing my ideas to life.
-                            </Text>
-                    </View>
-                    
-                    <View style={styles.viewRightContainer}>
-                        <Image 
-                        source={require('../assets/2_4.jpg')}
-                        style={[styles.imageLogo, {width: this.scaleSize(600), height: this.scaleSize(600)}]}
-                        onPress={() => console.log('hello') }></Image>
-
-                    </View>
-
-                    
-                </View>
-
-                
-                
-
-            </LinearGradient>
 
         </View>
     }
@@ -106,7 +72,7 @@ const styles = StyleSheet.create({
     },
     //Top page space
     pageContainerTop: {
-        flex: .25,
+        flex: .2,
         flexDirection: 'row',
     },
     imageLogo: {

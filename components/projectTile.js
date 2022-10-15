@@ -1,9 +1,48 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image, Button, Platform, Pressable, TouchableOpacity } from 'react-native';
+import {View, Text, StyleSheet, Image, Button, Platform, Pressable, TouchableOpacity, Dimensions } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 export default class ProjectTile extends React.Component {
+    
+    state = {  
+        //Initial width and height states
+        wHeight: Dimensions.get('window').height,
+        wWidth: Dimensions.get('window').width
+    }  
 
+    //Function to keep track of window width/height
+    componentDidMount() {
+        Dimensions.addEventListener("change", (handler) => 
+        {this.setState({wHeight: handler.window.height}); 
+        this.setState({wWidth: handler.window.width});})   
+    };
+
+    
+
+    scaleImage(width, height) {
+        var imgDimension = {
+            scaledWidth: width,
+            scaledHeight: height,
+        }
+        var scaleFactor = width/height;
+
+        //If large screen size, scale up images
+        if (this.state.wWidth > 1600){
+            imgDimension.scaledWidth = (width * this.state.wWidth)/1600;
+            imgDimension.scaledHeight = imgDimension.scaledWidth/scaleFactor;;
+        }
+
+        
+        if (width > this.state.wWidth){
+            imgDimension.scaledWidth = this.state.wWidth;
+            imgDimension.scaledHeight = this.state.wWidth/scaleFactor;
+            console.log(imgDimension.scaledWidth);
+        }
+        
+        return imgDimension;
+    }
+
+    
     render() {
         return <View style={styles.container}>
             
@@ -15,7 +54,9 @@ export default class ProjectTile extends React.Component {
                     style={styles.tile}
                     onPress={() => this.props.navigateTo(this.props.path)}
                     >
-                    <Image source={this.props.image} style={styles.imageLogo}></Image>
+                    <Image source={this.props.image} 
+                    style={[styles.imageLogo, {width: this.scaleImage(600, 500).scaledWidth}, {height: this.scaleImage(600, 500).scaledHeight}]}>
+                    </Image>
                     <Text style={styles.tileText}>{this.props.title}</Text>
                   
             </TouchableOpacity>             
@@ -55,8 +96,8 @@ const styles = StyleSheet.create({
         //textTransform: "uppercase"   
     },
     imageLogo: {
-        width: 600,
-        height: 500,
+        //width: 600,
+        //height: 500,
         alignSelf: "center",
         borderRadius: 30,
     },
