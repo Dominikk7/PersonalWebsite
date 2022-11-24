@@ -23,7 +23,8 @@ export default class MainPage extends React.Component {
     state = {  
         //Initial width and height states
         wHeight: Dimensions.get('window').height,
-        wWidth: Dimensions.get('window').width
+        wWidth: Dimensions.get('window').width,
+
     }  
 
     
@@ -42,29 +43,43 @@ export default class MainPage extends React.Component {
         this.setState({wWidth: handler.window.width});})  
         console.log("Loaded2"); 
         
-        var ipAddress;
+        
+
         publicIP()
             .then(ip2 => {    
             console.log(ip2);
-            ipAddress = ip2;
-        })
-            .catch(error => {
-            console.log(error);
-            ipAddress = ip2;
-            // 'Unable to get IP address.'
-        });
-        
-        fetch(' https://api.dkapps.tk/api', {
+            
+            fetch('https://api.dkapps.tk/api', { //https://api.dkapps.tk/api //http://192.168.1.5:4244/api
             method: 'POST',
             headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-        appID: 'dominikSiteData',
-        ip: 'ipAddress'  
+            },
+            body: JSON.stringify({
+            appID: 'dominikSiteData',
+            ip: ip2
+            })
+            });
+            
         })
+            .catch(error => {
+            console.log(error);
+            
+            fetch('https://api.dkapps.tk/api', { //https://api.dkapps.tk/api
+            method: 'POST',
+            headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+            appID: 'dominikSiteData',
+            ip: error
+            })
+            });
+
         });
+        
+        
         
     };
 
