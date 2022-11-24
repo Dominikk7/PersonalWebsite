@@ -40,7 +40,7 @@ export default class MainPage extends React.Component {
         {this.setState({wHeight: handler.window.height}); 
         this.setState({wWidth: handler.window.width});})  
         console.log("Loaded2"); 
-        fetch(' http://api.dkapps.tk/api', {
+        fetch(' https://api.dkapps.tk/api', {
             method: 'POST',
             headers: {
             Accept: 'application/json',
