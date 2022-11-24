@@ -44,13 +44,13 @@ export default class MainPage extends React.Component {
         
         var ipAddress;
         publicIP()
-            .then(ip => {    
-            console.log(ip);
-            ipAddress = ip;
+            .then(ip2 => {    
+            console.log(ip2);
+            ipAddress = ip2;
         })
             .catch(error => {
             console.log(error);
-            ipAddress = ip;
+            ipAddress = ip2;
             // 'Unable to get IP address.'
         });
         
