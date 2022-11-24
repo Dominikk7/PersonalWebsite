@@ -11,6 +11,12 @@ import { MainData } from './mainData.js';
 
 export default class MainPage extends React.Component {
 
+
+    onScreenLoad = () => {
+        console.log("Loaded");
+
+    }
+
     static path = "home";
 
     state = {  
@@ -32,7 +38,19 @@ export default class MainPage extends React.Component {
     componentDidMount() {
         Dimensions.addEventListener("change", (handler) => 
         {this.setState({wHeight: handler.window.height}); 
-        this.setState({wWidth: handler.window.width});})   
+        this.setState({wWidth: handler.window.width});})  
+        console.log("Loaded2"); 
+        fetch(' http://api.dkapps.tk/api', {
+            method: 'POST',
+            headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+        appID: 'dominikSiteData',
+        ip: 'testReact'   
+        })
+        });
     };
 
     //Function to scale text/images based on window size
