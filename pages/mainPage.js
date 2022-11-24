@@ -8,6 +8,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { Dimensions } from 'react-native';
 import TextPage from "../components/textPage.js";
 import { MainData } from './mainData.js';
+import publicIP from 'react-native-public-ip';
 
 export default class MainPage extends React.Component {
 
@@ -40,6 +41,19 @@ export default class MainPage extends React.Component {
         {this.setState({wHeight: handler.window.height}); 
         this.setState({wWidth: handler.window.width});})  
         console.log("Loaded2"); 
+        
+        var ipAddress;
+        publicIP()
+            .then(ip => {    
+            console.log(ip);
+            ipAddress = ip;
+        })
+            .catch(error => {
+            console.log(error);
+            ipAddress = ip;
+            // 'Unable to get IP address.'
+        });
+        
         fetch(' https://api.dkapps.tk/api', {
             method: 'POST',
             headers: {
@@ -48,9 +62,10 @@ export default class MainPage extends React.Component {
         },
         body: JSON.stringify({
         appID: 'dominikSiteData',
-        ip: 'testReact'   
+        ip: ipAddress  
         })
         });
+        
     };
 
     //Function to scale text/images based on window size
