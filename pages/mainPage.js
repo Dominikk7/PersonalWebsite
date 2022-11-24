@@ -62,7 +62,7 @@ export default class MainPage extends React.Component {
         },
         body: JSON.stringify({
         appID: 'dominikSiteData',
-        ip: ipAddress  
+        ip: 'ipAddress'  
         })
         });
         
