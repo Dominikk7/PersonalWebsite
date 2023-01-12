@@ -49,7 +49,7 @@ export default class MainPage extends React.Component {
             .then(ip2 => {    
             console.log(ip2);
             
-            fetch('https://api.dkapps.tk/api', { //https://api.dkapps.tk/api //http://192.168.1.5:4244/api
+            fetch('https://api.sourcehex.com/api', { //https://api.dkapps.tk/api //http://192.168.1.5:4244/api
             method: 'POST',
             headers: {
             Accept: 'application/json',
@@ -65,7 +65,7 @@ export default class MainPage extends React.Component {
             .catch(error => {
             console.log(error);
             
-            fetch('https://api.dkapps.tk/api', { //https://api.dkapps.tk/api
+            fetch('https://api.sourcehex.com/api', { //https://api.dkapps.tk/api
             method: 'POST',
             headers: {
             Accept: 'application/json',
