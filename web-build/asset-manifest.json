@@ -1,7 +1,7 @@
 {
   "files": {
-    "app.js": "/static/js/app.6c9fd63e.chunk.js",
-    "app.js.map": "/static/js/app.6c9fd63e.chunk.js.map",
+    "app.js": "/static/js/app.d4c3bf75.chunk.js",
+    "app.js.map": "/static/js/app.d4c3bf75.chunk.js.map",
     "runtime~app.js": "/static/js/runtime~app.27401809.js",
     "runtime~app.js.map": "/static/js/runtime~app.27401809.js.map",
     "static/js/2.2a3075c7.chunk.js": "/static/js/2.2a3075c7.chunk.js",
@@ -25,7 +25,6 @@
     "static/media/Key2.png": "/static/media/Key2.e16bd4fa.png",
     "static/media/LFA_small.png": "/static/media/LFA_small.8a6f7e98.png",
     "static/media/Wed1.jpg": "/static/media/Wed1.13f5f67a.jpg",
-    "static/media/cover.png": "/static/media/cover.4a0a755d.png",
     "static/media/cover2.jpg": "/static/media/cover2.40cfab20.jpg",
     "static/media/frame1.jpg": "/static/media/frame1.699a76c2.jpg",
     "static/media/frame2.jpg": "/static/media/frame2.13fa0534.jpg",
@@ -38,11 +37,12 @@
     "static/media/robot2.jpg": "/static/media/robot2.c6c49f02.jpg",
     "static/media/slide2.png": "/static/media/slide2.5b9039cc.png",
     "static/media/slides.png": "/static/media/slides.27dc6473.png",
-    "static/media/webarchitecture.jpg": "/static/media/webarchitecture.753f0f49.jpg"
+    "static/media/webarchitecture.jpg": "/static/media/webarchitecture.753f0f49.jpg",
+    "static/media/zs2.png": "/static/media/zs2.930f7103.png"
   },
   "entrypoints": [
     "static/js/runtime~app.27401809.js",
     "static/js/2.2a3075c7.chunk.js",
-    "static/js/app.6c9fd63e.chunk.js"
+    "static/js/app.d4c3bf75.chunk.js"
   ]
 }

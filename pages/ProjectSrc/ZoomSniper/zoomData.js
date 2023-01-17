@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, StyleSheet, Image, Button, Platform} from 'react-native';
 
 import Web from '../ZoomSniper/webarchitecture.jpg';
-import Cover from '../ZoomSniper/cover.png';
+import Cover from '../ZoomSniper/zs2.png';
 
 
 export const ZoomData = [
@@ -12,8 +12,8 @@ export const ZoomData = [
     },
     {
         type: "link",
-        linkText: "zoom.dkapps.tk",
-        url: "https://zoom.dkapps.tk",
+        linkText: "zoom.sourcehex.com",
+        url: "https://zoom.sourcehex.com",
         preText: "Link to project :  "
     },
     {

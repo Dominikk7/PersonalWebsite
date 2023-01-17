@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, StyleSheet, Image, Button, Platform} from 'react-native';
 
 import Img1 from '../ProjectSrc/Crypto/cover2.jpg';
-import Img2 from '../ProjectSrc/ZoomSniper/cover.png';
+import Img2 from '../ProjectSrc/ZoomSniper/zs2.png';
 import Img3 from '../ProjectSrc/Rendering/LFA_small.png';
 import Img4 from '../ProjectSrc/ImageEncoder/3.png';
 
