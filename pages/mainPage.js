@@ -1,6 +1,6 @@
 // MainPage screen
 
-import React from 'react';
+import React, { Suspense, useRef } from 'react';
 import {View, Text, StyleSheet, Image, useWindowDimensions, Button, Platform} from 'react-native';
 import NavigationBar from "../components/navigationbar.js";
 import NavStyle from "../styles/navStyle";
@@ -9,6 +9,7 @@ import { Dimensions } from 'react-native';
 import TextPage from "../components/textPage.js";
 import { MainData } from './mainData.js';
 import publicIP from 'react-native-public-ip';
+
 
 export default class MainPage extends React.Component {
 
@@ -87,20 +88,15 @@ export default class MainPage extends React.Component {
     scaleSize (size) {
         return (this.state.wWidth)/2543 * size;
     }
-    //fontSize: this.scaleSize(50)
 
-    
     render() {
-        
         return <View style={styles.container}>
             
             <View style={NavStyle.navBarParent}>
                 <NavigationBar navigateTo={this.navigateTo} currentPage='MainPage'/>
             </View>
-            
-            
-            <TextPage pageData={MainData}></TextPage>
 
+            <TextPage pageData={MainData}></TextPage>
 
         </View>
     }
