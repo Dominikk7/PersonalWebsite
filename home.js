@@ -16,6 +16,8 @@ import Zoom from './pages/ProjectSrc/ZoomSniper/zoom.js';
 import Rendering from './pages/ProjectSrc/Rendering/rendering.js';
 import Image from './pages/ProjectSrc/ImageEncoder/image.js';
 
+import TestPage from "./pages/testPage";
+
 const isWeb = Platform.OS === 'web';
 
 const Home = createSwitchNavigator( //or createStackNavigator
@@ -28,6 +30,7 @@ const Home = createSwitchNavigator( //or createStackNavigator
         Zoom: Zoom,
         Rendering: Rendering,
         Image: Image,
+        TestPage: TestPage,
     },
     {
         navigationOptions: {
