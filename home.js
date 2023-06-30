@@ -17,6 +17,7 @@ import Rendering from './pages/ProjectSrc/Rendering/rendering.js';
 import Image from './pages/ProjectSrc/ImageEncoder/image.js';
 
 import TestPage from "./pages/testPage";
+import LeoPage from "./pages/leoPage";
 
 const isWeb = Platform.OS === 'web';
 
@@ -31,6 +32,7 @@ const Home = createSwitchNavigator( //or createStackNavigator
         Rendering: Rendering,
         Image: Image,
         TestPage: TestPage,
+        LeoPage: LeoPage
     },
     {
         navigationOptions: {
