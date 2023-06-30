@@ -11,6 +11,7 @@ import { MainData } from './mainData.js';
 import publicIP from 'react-native-public-ip';
 
 
+
 export default class MainPage extends React.Component {
 
 
@@ -92,6 +93,7 @@ export default class MainPage extends React.Component {
     render() {
         return <View style={styles.container}>
             
+
             <View style={NavStyle.navBarParent}>
                 <NavigationBar navigateTo={this.navigateTo} currentPage='MainPage'/>
             </View>
