@@ -5,6 +5,7 @@ import TextPage from "../../../components/textPage.js";
 import { RenderingData } from './renderingData.js';
 import { WebView } from 'react-native-web-webview';
 
+
 export default class Rendering extends React.Component {
 
     static path = "projects/rendering";
@@ -12,7 +13,6 @@ export default class Rendering extends React.Component {
     render() {
     
         return <View style={styles.container}>
-        
             <TextPage pageData={RenderingData}></TextPage>
 
         </View>

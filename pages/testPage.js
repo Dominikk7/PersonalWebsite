@@ -10,42 +10,7 @@ import TextPage from "../components/textPage.js";
 import { MainData } from './mainData.js';
 import publicIP from 'react-native-public-ip';
 
-
-import { Canvas, useFrame, useLoader } from '@react-three/fiber'
-import { OrbitControls } from '@react-three/drei'
-import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader';
-
-import Robot3d from './Robot3d'
-import { Environment } from '@react-three/drei'
-
-  function Robot(props) {
-    //const obj = useLoader(OBJLoader,require('../assets/untitled.obj'));
-    const material = useLoader(MTLLoader, require('../assets/3d/skystone.mtl'));
-    
-    const obj = useLoader(
-        OBJLoader,
-        require('../assets/3d/skystone.obj'),
-        (loader) => {
-          material.preload();
-          loader.setMaterials(material);
-        }
-      );
-      
-
-
-    const ref = useRef()
-
-    return (
-      <mesh
-        {...props}
-        ref={ref}
-       >
-        <primitive object={obj} scale={.01} position={[0, -1, .8]} />
-      </mesh>
-    )
-  }
+import Robot3d from "./Robot3d.js";
 
   function Spinner() {
     
@@ -60,7 +25,8 @@ import { Environment } from '@react-three/drei'
 
 export default class MainPage extends React.Component {
 
-    onScreenLoad = () => {
+    
+  onScreenLoad = () => {
         console.log("Loaded");
 
     }
@@ -98,29 +64,9 @@ export default class MainPage extends React.Component {
     render() {
 
       
-      return (
-        <Suspense fallback={<ActivityIndicator size="large" color="#8532a8" style={styles.centered}/>}>
-            <Canvas camera={{ position: [5,1.5,-1.5]}}>   
-            <ambientLight intensity={0.5} />
-            
-            <pointLight position={[-10, 10, -10]} />           
-            <Robot3d scale={.01} position={[0, -1, .8]}/>
-            <OrbitControls />
-            </Canvas>
-        </Suspense>
+      return (       
+        <Robot3d></Robot3d>
       )
-
-      return (
-        <div className="App">
-          <Canvas>
-            <Suspense fallback={null}>
-              <Robot3d />
-              <Environment preset="sunset" background />
-            </Suspense>
-          </Canvas>
-        </div>
-      )
-
     }
 }
 

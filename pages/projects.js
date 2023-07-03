@@ -1,18 +1,32 @@
 //Project screen
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import {View, Text, StyleSheet, Image, Button, Platform} from 'react-native';
 import NavigationBar from "../components/navigationbar.js";
 import ProjectTile from "../components/projectTile.js";
 import NavStyle from "../styles/navStyle";
 import { LinearGradient } from 'expo-linear-gradient';
-import { Dimensions } from 'react-native';
+import { Dimensions, ScrollView  } from 'react-native';
 
 import { ProjectIndex } from '../pages/ProjectSrc/projectIndex.js';
 
 const isWeb = Platform.OS === 'web';
 
 export default class Projects extends React.Component {
+
+    //Override scrolling behavior
+    scrollViewRef = React.createRef();
+    componentDidMount() {
+      window.addEventListener('popstate', this.handleNavigation);
+    } 
+    componentWillUnmount() {
+      window.removeEventListener('popstate', this.handleNavigation);
+    } 
+    handleNavigation = () => {
+      if (this.scrollViewRef.current) {
+        this.scrollViewRef.current.scrollTo({ y: 0, animated: false });
+      }
+    };
 
     static path = "projects";
 
@@ -44,6 +58,7 @@ export default class Projects extends React.Component {
         return (this.state.wWidth)/2543 * size;
     }
  
+    
 
     render() {
         return <View style={styles.container}>
@@ -63,17 +78,11 @@ export default class Projects extends React.Component {
                     
                     {ProjectIndex.map((project, index) => {
                         return(
-                            <ProjectTile style={styles.tileParent} title={project.title} path={project.path} image={project.image} navigateTo={this.navigateTo}></ProjectTile> 
+                            <ProjectTile style={styles.tileParent} title={project.title} path={project.path} image={project.image} navigateTo={this.navigateTo} rotation={project.rotation}></ProjectTile> 
                         )
-
-
                     })}
-
-                    
+                 
                 </View>
-
-                
-                
 
             </LinearGradient>
 

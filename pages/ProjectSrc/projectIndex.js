@@ -6,6 +6,8 @@ import Img2 from '../ProjectSrc/ZoomSniper/zs2.png';
 import Img3 from '../ProjectSrc/Rendering/LFA_small.png';
 import Img4 from '../ProjectSrc/ImageEncoder/3.png';
 
+import Gif3d from '../ProjectSrc/Rendering/robot.webp';
+
 import Placeholder from '../ProjectSrc/placeholder.png';
 
 
@@ -23,7 +25,8 @@ export const ProjectIndex = [
     },
     {
         title: "3D Modelling and Rendering",
-        image: Img3,
+        image: Gif3d, //Img3
+        //rotation: true,
         path: "Rendering",
     },
     {

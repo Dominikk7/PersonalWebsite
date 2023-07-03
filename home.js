@@ -18,6 +18,9 @@ import Image from './pages/ProjectSrc/ImageEncoder/image.js';
 
 import TestPage from "./pages/testPage";
 import LeoPage from "./pages/leoPage";
+import Skystone3d from "./pages/Robot3d";
+import RoverRuckus3d from "./pages/Robot3dRover";
+import Diff3d from "./pages/Diff3d";
 
 const isWeb = Platform.OS === 'web';
 
@@ -32,7 +35,10 @@ const Home = createSwitchNavigator( //or createStackNavigator
         Rendering: Rendering,
         Image: Image,
         TestPage: TestPage,
-        LeoPage: LeoPage
+        LeoPage: LeoPage,
+        Skystone3d: Skystone3d,
+        RoverRuckus3d: RoverRuckus3d,
+        Diff3d: Diff3d,
     },
     {
         navigationOptions: {

@@ -1,7 +1,34 @@
-import React, { useRef } from "react";
+import React, { Suspense, useState } from 'react';
+import { ActivityIndicator } from 'react-native';
+import { Canvas} from '@react-three/fiber'
+import { OrbitControls, View } from '@react-three/drei'
 import { useGLTF } from "@react-three/drei";
+import {StyleSheet} from 'react-native';
 
-export default function Robot3d(props) {
+export default function Robot3d(){
+  return (
+    <Suspense fallback={<ActivityIndicator size="large" color="#8532a8" style={styles.centered}/>}>
+        <Canvas camera={{ position: [5,1.5,-1.5]}}>   
+        <ambientLight intensity={0.5} />
+        
+        <pointLight position={[-10, 10, -10]} />           
+        <Robot scale={.01} position={[0, -1, .8]}/>
+        <OrbitControls />
+        </Canvas>
+    </Suspense>
+  )
+} 
+
+const styles = StyleSheet.create({
+  centered: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    height: "100%"
+  }, 
+})
+
+function Robot(props) {
   const { nodes, materials } = useGLTF(require('../assets/3d/8.glb'));
   return (
     <group {...props} dispose={null}>

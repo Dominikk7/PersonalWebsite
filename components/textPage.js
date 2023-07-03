@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image, Linking, FlatList, Button, Platform} from 'react-native';
+import {View, Text, StyleSheet, Image, Linking, FlatList, Button, Platform, Pressable, Alert} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Dimensions } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
@@ -7,6 +7,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 
 export default class TestPage extends React.Component {
 
+    
 
 
     state = {  
@@ -20,7 +21,11 @@ export default class TestPage extends React.Component {
         Dimensions.addEventListener("change", (handler) => 
         {this.setState({wHeight: handler.window.height}); 
         this.setState({wWidth: handler.window.width});})   
+
+        window.scrollTo({ top:0, left:0, behavior: "instant"})
+
     };
+    
 
     textAlign(width, height) {
         var imgDimension = {
@@ -73,7 +78,8 @@ export default class TestPage extends React.Component {
                     <View style={styles.pageContainerTop}></View>
                     
                     
-                    <ScrollView showsVerticalScrollIndicator ={false}>
+                    <ScrollView showsVerticalScrollIndicator ={false} contentOffset={{ x: 0, y: 0 }}
+                    >
                     
                     
                     
@@ -96,7 +102,9 @@ export default class TestPage extends React.Component {
                                     return(
                                         <React.Fragment key={index}>
                                             <View style={[styles.captionBox, {width: this.scaleImage(data.width, data.height).scaledWidth}, {height: this.scaleImage(data.width, data.height).scaledHeight}]}>
+                                            <Pressable onPress={() => Linking.openURL(data.link)} style={styles.imageLogo} disabled={data.link == undefined}>
                                                 <Image source={data.image} style={styles.imageLogo}></Image>
+                                            </Pressable>
                                                 <Text style={styles.captionText}>{data.caption}</Text>
                                             </View>
                                             <Text style={styles.smallText}>{'\n'}</Text>
@@ -113,14 +121,18 @@ export default class TestPage extends React.Component {
                                             <View style={[data.width*2 < this.state.wWidth ? styles.alignRow : styles.imageTextParentColumn]}>
                                             <View>
                                                 <View style={[styles.captionBox, {width: this.scaleImage(data.width, data.height).scaledWidth}, {height: this.scaleImage(data.width, data.height).scaledHeight}]}>
-                                                    <Image source={data.image} style={styles.imageLogo}></Image>
+                                                    <Pressable onPress={() => Linking.openURL(data.link)} style={styles.imageLogo} disabled={data.link == undefined}>
+                                                        <Image source={data.image} style={styles.imageLogo}></Image>
+                                                    </Pressable>
                                                     <Text style={styles.captionText}>{data.caption}</Text>
                                                 </View>
                                                 <Text style={styles.smallText}>{'\n'}</Text>
                                             </View>
                                             <View>
                                                 <View style={[styles.captionBox, {width: this.scaleImage(data.width, data.height).scaledWidth}, {height: this.scaleImage(data.width, data.height).scaledHeight}]}>
-                                                    <Image source={data.image2} style={styles.imageLogo}></Image>
+                                                    <Pressable onPress={() => Linking.openURL(data.link2)} style={styles.imageLogo} disabled={data.link2 == undefined}>
+                                                        <Image source={data.image2} style={styles.imageLogo}></Image>
+                                                    </Pressable>
                                                     <Text style={styles.captionText}>{data.caption2}</Text>
                                                 </View>
                                                 <Text style={styles.smallText}>{'\n'}</Text>
@@ -137,21 +149,27 @@ export default class TestPage extends React.Component {
                                             <View style={[data.width*3 < this.state.wWidth ? styles.alignRow : styles.imageTextParentColumn]}>
                                             <View>
                                                 <View style={[styles.captionBox, {width: this.scaleImage(data.width, data.height).scaledWidth}, {height: this.scaleImage(data.width, data.height).scaledHeight}]}>
-                                                    <Image source={data.image} style={styles.imageLogo}></Image>
+                                                    <Pressable onPress={() => Linking.openURL(data.link)} style={styles.imageLogo} disabled={data.link == undefined}>
+                                                        <Image source={data.image} style={styles.imageLogo}></Image>
+                                                    </Pressable>
                                                     <Text style={styles.captionText}>{data.caption}</Text>
                                                 </View>
                                                 <Text style={styles.smallText}>{'\n'}</Text>
                                             </View>
                                             <View>
                                                 <View style={[styles.captionBox, {width: this.scaleImage(data.width, data.height).scaledWidth}, {height: this.scaleImage(data.width, data.height).scaledHeight}]}>
-                                                    <Image source={data.image2} style={styles.imageLogo}></Image>
+                                                    <Pressable onPress={() => Linking.openURL(data.link2)} style={styles.imageLogo} disabled={data.link2 == undefined}>
+                                                        <Image source={data.image2} style={styles.imageLogo}></Image>
+                                                    </Pressable>
                                                     <Text style={styles.captionText}>{data.caption2}</Text>
                                                 </View>
                                                 <Text style={styles.smallText}>{'\n'}</Text>
                                             </View>
                                             <View>
                                                 <View style={[styles.captionBox, {width: this.scaleImage(data.width, data.height).scaledWidth}, {height: this.scaleImage(data.width, data.height).scaledHeight}]}>
-                                                    <Image source={data.image3} style={styles.imageLogo}></Image>
+                                                    <Pressable onPress={() => Linking.openURL(data.link3)} style={styles.imageLogo} disabled={data.link3 == undefined}>
+                                                        <Image source={data.image3} style={styles.imageLogo}></Image>
+                                                    </Pressable>
                                                     <Text style={styles.captionText}>{data.caption3}</Text>
                                                 </View>
                                                 <Text style={styles.smallText}>{'\n'}</Text>

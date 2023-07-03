@@ -39,7 +39,7 @@ export default class MainPage extends React.Component {
 
     }
 
-    static path = "leo";
+    static path = "leo2";
 
     state = {  
         //Initial width and height states

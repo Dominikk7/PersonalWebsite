@@ -2,6 +2,8 @@ import React from 'react';
 import {View, Text, StyleSheet, Image, Button, Platform, Pressable, TouchableOpacity, Dimensions } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
+import Robot3d from "../pages/Robot3d";
+
 export default class ProjectTile extends React.Component {
     
     state = {  
@@ -54,9 +56,10 @@ export default class ProjectTile extends React.Component {
                     style={styles.tile}
                     onPress={() => this.props.navigateTo(this.props.path)}
                     >
-                    <Image source={this.props.image} 
+                    {true && <Image source={this.props.image} 
                     style={[styles.imageLogo, {width: this.scaleImage(600, 500).scaledWidth}, {height: this.scaleImage(600, 500).scaledHeight}]}>
-                    </Image>
+                    </Image>}
+                    {this.props.rotation == true && <Robot3d></Robot3d>}
                     <Text style={styles.tileText}>{this.props.title}</Text>
                   
             </TouchableOpacity>             
