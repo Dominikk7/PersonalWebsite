@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, StyleSheet, Image, Button, Platform} from 'react-native';
 
 //import Cover from '../assets/2_4.jpg';
-import Cover from '../assets/test9.jpg';
+import Cover from '../assets/test10.jpg';
 
 
 export const MainData = [
