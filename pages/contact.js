@@ -45,6 +45,16 @@ export default class Projects extends React.Component {
                     </Text>
                     </View>
                     <View style={{flexDirection:'row'}}>
+                    <Text style={styles.sectionText}
+                        onPress={() => Linking.openURL("https://www.linkedin.com/in/dominik-kapuscinski/")}>
+                        {"\nLinkedIn : "}  
+                    </Text>
+                    <Text style={styles.linkText}
+                        onPress={() => Linking.openURL("https://www.linkedin.com/in/dominik-kapuscinski/")}>
+                        {"\nlinkedin.com/in/dominik-kapuscinski"}
+                    </Text>
+                    </View>
+                    <View style={{flexDirection:'row'}}>
                     <Text style={styles.sectionText}>
                         {"\nEmail : "}  
                     </Text>

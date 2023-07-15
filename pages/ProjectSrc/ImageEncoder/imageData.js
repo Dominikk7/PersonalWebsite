@@ -3,6 +3,11 @@ import {View, Text, StyleSheet, Image, Button, Platform} from 'react-native';
 
 import Web from '../ZoomSniper/webarchitecture.jpg';
 import Cover from '../ImageEncoder/1.png';
+import API from '../ImageEncoder/API.png';
+import SQL1 from '../ImageEncoder/SQL1.png';
+import SQL2 from '../ImageEncoder/SQL2.png';
+import Album from '../ImageEncoder/Album.png';
+import Album2 from '../ImageEncoder/Album2.png';
 
 
 export const ImageData = [
@@ -12,15 +17,15 @@ export const ImageData = [
     },
     {
         type: "link",
-        linkText: "image.dkapps.tk",
-        url: "https://image.dkapps.tk",
+        linkText: "photo.sourcehex.com",
+        url: "https://photo.sourcehex.com",
         preText: "Link to project :  "
     },
     {
         type: "link",
-        linkText: "coming soon",
-        url: "https://github.com/Dominikk7",
-        preText: "Link to GitHub :  "
+        linkText: "github.com/Dominikk7/PhotoBomb",
+        url: "https://github.com/Dominikk7/PhotoBomb",
+        preText: "Link to GitHub : "
     },
     {
         type: "block",
@@ -28,7 +33,7 @@ export const ImageData = [
         {'\n'}Inspiration
         </>,
         text: <>
-        I wanted to create an app that allows users to hide text and messages in pictures and decode them later. When I first heard of steganography, I was very interested. I wanted to try to make an algorithm that hides text in images myself. I was familiar with Windows Form App from my Zoom Sniper project, so it was easy to design the UI for windows. If I was to remake the project, I would make it a web app in React. Web apps are more accessible on various devices and don’t require installation of additional files. 
+        I wanted to create an app that allows users to hide text and messages in pictures and decode them later. When I first heard of steganography, I was very interested. I wanted to try to make an algorithm that hides text in images myself. I was familiar with Windows Form App from my Zoom Sniper project, so it was easy to design the UI for windows.  
         {'\n'}</>,
     },
     {
@@ -46,7 +51,7 @@ export const ImageData = [
         width: 600,
         height: 300,
         caption: <>
-        App Screenshot</>
+        Original Windows Form App Screenshot</>
     },
     {
         type: "block",
@@ -60,20 +65,41 @@ export const ImageData = [
     {
         type: "block",
         title: <>
-        {'\n'}Web Server
+        {'\n'}Web App Project
         </>,
         text: <>
-          The web server uses the same architecture as my Zoom Sniper project does. It was simple to host another page using XAMPP, add another virtual server in the load balancer and update the DNS records in Cloudflare so the website is accessible through image.dkapps.tk. 
-          {'\n\n'}</>,
+        For my Introduction to Software Engineering class our group of four decided to make a web app for image steganography. The frontend was done using Angular and backend in GoLang. I worked primarily on the backend MySQL database, image storage and API. Additionally, I worked on the frontend image gallery and HTML request to the API. After we finished the project, I made changes to make the app production ready by using an NGINX web server, setting up a reverse proxy to avoid browser CORS errors, setting up Cloudflare, and deploying the app on my Linux server. 
+        {'\n\n'}</>,
+    },
+    {
+        type: "block",
+        title: <>
+        {'\n'}New Functionality
+        </>,
+        text: <>
+        The app supports account creation and login. Each user has their own gallery where they can upload, encode, decode, view, download, and delete images. I learned a lot about software engineering on a team, using GitHub to coordinate work with branches, pull requests, API documentation, and issues. 
+        {'\n\n'}</>,
     },
     {
         type: "image",
-        image: Web,
-        width: 1000,
-        height: 450,
+        image: Album2,
+        width: 850,
+        height: 420,
+        link: 'https://youtu.be/bun86qwzdJM?t=554',
         caption: <>
-        Web Architecture</>
+        Interacting with album (Click to watch)</>
     },
+    {
+        type: "image",
+        image: API,
+        width: 600,
+        height: 550,
+        link: 'https://github.com/Dominikk7/PhotoBomb/blob/main/Sprint4.md',
+        caption: <>
+        Backend API</>
+    },
+
+
 
     
     

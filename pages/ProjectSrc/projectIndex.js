@@ -2,9 +2,9 @@ import React from 'react';
 import {View, Text, StyleSheet, Image, Button, Platform} from 'react-native';
 
 import Img1 from '../ProjectSrc/Crypto/cover2.jpg';
-import Img2 from '../ProjectSrc/ZoomSniper/zs2.png';
+import Img2 from '../ProjectSrc/ZoomSniper/newCover.png';
 import Img3 from '../ProjectSrc/Rendering/LFA_small.png';
-import Img4 from '../ProjectSrc/ImageEncoder/3.png';
+import Img4 from '../ProjectSrc/ImageEncoder/cover.png';
 
 import Gif3d from '../ProjectSrc/Rendering/robot.webp';
 
@@ -34,36 +34,7 @@ export const ProjectIndex = [
         image: Img4,
         path: "Image",
     },
-    {
-        title: "Networks",
-        image: Placeholder,
-        path: "projects/path2",
-    },
-    {
-        title: "PC Building",
-        image: Placeholder,
-        path: "projects/path2",
-    },
-    {
-        title: "FTC Robotics",
-        image: Placeholder,
-        path: "projects/path2",
-    },
-    {
-        title: "Web Scraping",
-        image: Placeholder,
-        path: "projects/path2",
-    },
-    {
-        title: "FTC Robotics",
-        image: Placeholder,
-        path: "projects/path2",
-    },
-    {
-        title: "Coinbase Exchange Java Connector",
-        image: Placeholder,
-        path: "projects/path2",
-    },
+
 
 
 ];
