@@ -30,7 +30,7 @@ export const MainData = [
                             other’s skills as much as my own, and I know with the right team, there are no limits to what can be 
                             accomplished. I hope to work on projects that require developing new solutions to a problem or automating
                             and improving an existing one. I also want to continue to work on my own projects because I like the challenge
-                            of creating something by myself and bringing my ideas to life.
+                            of creating something by myself and bringing my ideas to life
         {'\n\n'}</>,
     },
 
