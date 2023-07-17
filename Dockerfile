@@ -25,13 +25,12 @@ FROM nginx:1.25.1-alpine as prod
 RUN apk add git
 WORKDIR /code
 RUN git clone https://github.com/Dominikk7/PersonalWebsite
-
 #COPY --from=build /code/PersonalWebsite/web-build /usr/share/nginx/html
 COPY default.conf /etc/nginx/conf.d/
 
 EXPOSE 80
 WORKDIR /code/PersonalWebsite
-COPY /web-build . 
+#COPY /web-build . 
 CMD ["sh","-c","git pull https://github.com/Dominikk7/PersonalWebsite && nginx -g 'daemon off;'"] 
 #git pull https://github.com/Dominikk7/PersonalWebsite &&
 #CMD ["nginx", "-g", "daemon off;"]
