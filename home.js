@@ -5,7 +5,7 @@ import {createAppContainer} from 'react-navigation';
 import {createBrowserApp} from "@react-navigation/web";
 import {createSwitchNavigator} from 'react-navigation';
 
-import Projects from "./pages/Projects";
+import Projects from "./pages/projects";
 import MainPage from "./pages/mainPage";
 import Experience from "./pages/experience";
 import Contact from "./pages/contact";

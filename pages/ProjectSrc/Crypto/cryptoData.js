@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet, Image, Button, Platform} from 'react-native';
 
-import Img1 from '../Crypto/cover2.jpg';
+import Img1 from '../Crypto/cover2.JPG';
 import PriceChart from '../Crypto/priceChart.png';
 import Garage1 from '../Crypto/1.jpg';
 

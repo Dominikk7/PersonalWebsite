@@ -4,10 +4,10 @@ import {View, Text, StyleSheet, Image, Button, Platform} from 'react-native';
 import Web from '../ZoomSniper/webarchitecture.jpg';
 import Cover from '../ImageEncoder/1.png';
 import API from '../ImageEncoder/API.png';
-import SQL1 from '../ImageEncoder/SQL1.png';
-import SQL2 from '../ImageEncoder/SQL2.png';
-import Album from '../ImageEncoder/Album.png';
-import Album2 from '../ImageEncoder/Album2.png';
+import SQL1 from '../ImageEncoder/sql1.png';
+import SQL2 from '../ImageEncoder/sql2.png';
+import Album from '../ImageEncoder/album.png';
+import Album2 from '../ImageEncoder/album2.png';
 
 
 export const ImageData = [

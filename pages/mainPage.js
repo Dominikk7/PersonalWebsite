@@ -46,11 +46,12 @@ export default class MainPage extends React.Component {
         console.log("Loaded2"); 
         
         
-
         publicIP()
             .then(ip2 => {    
             console.log(ip2);
             
+            
+
             fetch('https://api.sourcehex.com/api', { //https://api.dkapps.tk/api //http://192.168.1.5:4244/api
             method: 'POST',
             headers: {
@@ -61,12 +62,15 @@ export default class MainPage extends React.Component {
             appID: 'dominikSiteData',
             ip: ip2
             })
-            });
+            }).catch(error => {
+                console.log("API Error");
+            })
             
         })
             .catch(error => {
             console.log(error);
             
+            /*
             fetch('https://api.sourcehex.com/api', { //https://api.dkapps.tk/api
             method: 'POST',
             headers: {
@@ -78,6 +82,7 @@ export default class MainPage extends React.Component {
             ip: error
             })
             });
+            */
 
         });
         

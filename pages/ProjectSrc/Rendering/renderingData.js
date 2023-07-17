@@ -9,10 +9,10 @@ import Robot4 from '../Rendering/slides.png';
 import India1 from '../Rendering/line_1.png';
 import India2 from '../Rendering/Wed1.jpg';
 
-import Key1 from '../Rendering/Key1.png';
-import Key2 from '../Rendering/Key2.png';
+import Key1 from '../Rendering/key1.png';
+import Key2 from '../Rendering/key2.png';
 
-import DiffYT from '../Rendering/DiffYT.jpg';
+import DiffYT from '../Rendering/diffYT.jpg';
 import Diff3d from '../Rendering/3ddiff.png';
 
 
