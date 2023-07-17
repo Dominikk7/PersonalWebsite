@@ -27,12 +27,13 @@ WORKDIR /code
 RUN git clone https://github.com/Dominikk7/PersonalWebsite
 
 #COPY --from=build /code/PersonalWebsite/web-build /usr/share/nginx/html
-
 COPY default.conf /etc/nginx/conf.d/
 
 EXPOSE 80
 WORKDIR /code/PersonalWebsite
-CMD ["sh","-c","git pull https://github.com/Dominikk7/PersonalWebsite && nginx -g 'daemon off;'"]
+COPY /web-build . 
+CMD ["sh","-c","git pull https://github.com/Dominikk7/PersonalWebsite && nginx -g 'daemon off;'"] 
+#git pull https://github.com/Dominikk7/PersonalWebsite &&
 #CMD ["nginx", "-g", "daemon off;"]
 
 
