@@ -7,6 +7,7 @@ import NavStyle from "../styles/navStyle";
 import { LinearGradient } from 'expo-linear-gradient';
 import { Dimensions } from 'react-native';
 import TextPage from "../components/textPage.js";
+import TestPage from "../components/testPage.js";
 import { MainData } from './mainData.js';
 import publicIP from 'react-native-public-ip';
 
@@ -102,8 +103,12 @@ export default class MainPage extends React.Component {
             <View style={NavStyle.navBarParent}>
                 <NavigationBar navigateTo={this.navigateTo} currentPage='MainPage'/>
             </View>
-
+            
             <TextPage pageData={MainData}></TextPage>
+
+
+            {//<TextPage pageData={MainData}></TextPage>
+    }
 
         </View>
     }

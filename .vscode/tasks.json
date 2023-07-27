@@ -1,0 +1,41 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            //Install tools required for build
+            "label": "install dependicies",
+            "type": "shell",
+            "command": "npm install --force"
+        },
+        {
+            //Web-build (static files)
+            "label": "web build",
+            "type": "shell",
+            "command": "npx expo export:web"
+        },
+        {
+            //Docker build image
+            "label": "Docker build",
+            "type": "shell",
+            "command": "docker build -t dominikk7/react-docker:1.0.0-prod .",
+            "dependsOn": ["web build"]     
+        },
+        {
+            //Docker push image
+            "label": "Docker push",
+            "type": "shell",
+            "dependsOn": ["Docker build"],
+            "command": "docker push dominikk7/react-docker:1.0.0-prod",   
+            //docker buildx build . --platform linux/amd64,linux/arm64 -t dominikk7/react-docker:1.0.0-arm --push  
+        },
+        {
+            //Docker push arm
+            "label": "Docker push arm",
+            "type": "shell",
+            //"dependsOn": ["Docker build"],
+            "command": "docker buildx build . --platform linux/amd64,linux/arm64 -t dominikk7/react-docker:1.0.0-arm --push",   
+            //docker buildx build . --platform linux/amd64,linux/arm64 -t dominikk7/react-docker:1.0.0-arm --push  
+        },
+
+    ]
+}

@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, StyleSheet, Image, Button, Platform} from 'react-native';
 
 //import Cover from '../assets/2_4.jpg';
-import Cover from '../assets/test10.jpg';
+import Cover from '../assets/test11.png';
 
 
 export const MainData = [
@@ -23,8 +23,7 @@ export const MainData = [
         textSize: 22,
         text: <>
         I am currently studying Computer Engineering at the University of Florida. 
-                            I am always coming up with ideas and working on projects to learn about different technologies, and applying 
-                            them to solve problems. My passions are robotics, computers, programming, and crypto, and my
+                            My passions are robotics, computers, programming, and crypto, and my
                             favorite outdoor activity is mountain biking. At UF I am a part of the Polish Student Association, ACM, GAITOR Club
                             and the Machine Intelligence Lab.{'\n\n'}My goal is to work on projects that I enjoy in a team environment. I value
                             other’s skills as much as my own, and I know with the right team, there are no limits to what can be 
